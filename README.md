@@ -81,7 +81,7 @@ all location shifted for partial redaction but block remains same
 DD/MM/YYY 12hr amp/pm h:m:s 
 - Historical Wards 2003-2015, Zip Codes,	Community Areas,	Census Tracts,	Wards,	Boundaries - ZIP Codes,	Police Districts, Police Beats
 
-22 col  6,981,560(???)
+22 col  6,981,560(???) 6,982,341
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
