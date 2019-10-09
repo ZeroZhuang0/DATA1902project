@@ -5,7 +5,7 @@ https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/downloads/bitcoin-t
 https://www.quandl.com/data/WGC/GOLD_DAILY_USD-Gold-Prices-Daily-Currency-USD
 https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2/data
 
-To Do/Details
+To Do/Details (more info abt cleaning and prelim analysis at bottom)
 •Submit pdf. This should be submitted through  Turnitin,  via  the  link  in  the Canvassite.  The  report  should be targeted  at  a  tutor  or  lecturer  whose  goal  is  to  see  what  you  did,  so  they can allocate a mark. The report should have a three-section structure that corresponds  to  the  marking  scheme:  
 data, that you have clearly shown where you obtained the data,  that  you  have  described  the  contents  of  the  dataset  (explaining clearly  both  the  format,  and  the  meaning  of  the  various  aspects)
 your description shows clearly that you have appropriate rights to use the data in the ways that you do use it, and  your  explanation  shows  sensible  reflection  of  the  strengths  and limitations  of  the  data  that  you  obtained. 
@@ -13,6 +13,7 @@ to be considered for full marks,  there  must  be  a  real  challenge  in  relat
 
 # Data
 a  section  that  describes  the  data source(s),  the format/contents  of  the  data, the  rights  associated  with  the data;
+(Pretty Sure We Describe the Raw Data not the cleaned)
 
 ### Bitcoin tweets + prices
 Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
@@ -58,6 +59,18 @@ Any user of this website providing any software application, or other secondary 
 Include the following disclaimer at the site where the software application, or other secondary or derivative application can be accessed or downloaded:
 “This site provides applications using data that has been modified for use from its original source, www.cityofchicago.org, the official website of the City of Chicago.  The City of Chicago makes no claims as to the content, accuracy, timeliness, or completeness of any of the data provided at this site.  The data provided at this site is subject to change at any time.  It is understood that the data provided at this site is being used at one’s own risk.”
 Comply with any additional Terms of Use set forth by the City agency or department providing data used by the software application, or other secondary or derivative application, including, without limitation, requirements to include additional citations or disclaimers at the site where the application can be accessed or downloaded. 
+
+Gold Prices (Now Redundant)
+https://www.quandl.com/data/WGC-Gold-Prices?page=3
+‘This database contains all of the available indicators published by the World Gold Council, included is data on the trading prices on all the major gold trading countries.
+This is open data that we’ve sourced and made freely available to you.’
+
+From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ 
+ 
+Use of this website: This Website and the information and materials on this Website are provided for general informational and educational purposes only.
+You are permitted to save, display or print out information contained on this Website only for your personal, non-commercial use.
+
+USD per troy ounce  | Sources: ICE Benchmark Administration, London Metal Exchange, Shanghai Gold Exchange, World Gold Council;
 
 
 
