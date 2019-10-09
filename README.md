@@ -18,10 +18,10 @@ a  section  that  describes  the  data source(s),  the format/contents  of  the 
 
 ### Bitcoin tweets + prices
 Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
-The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
-You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.
+"The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
+You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission." 
 
-The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download tweets from 2017-08-02(01) to 2019-01-22 in order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns 
+The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download the 17.7 million + tweets from 2017-08-02(01) to 2019-01-22 with which  order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns. Other than information on tweets the dataset also contains bitcoin information at the same hourly time periods the tweets are sorted in. the creater gave  sentiment score was assigned to each tweet using library VaderSentiment which assings a numerical value to h, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments
 
 
 Used GetOldTweets to download all tweets of the period. Jaime Badiola
@@ -32,8 +32,8 @@ Small description
  I collected over 17.7 million tweets  This dataset contains the average sentiment of all tweets about bitcoin  How did I do sentiment analysis? library VaderSentiment. I added about 30 expressions  and words to the dictionary. To score the expressions I used the same methodology as the authors described in their paper.It also contains the financial data of bitcoin for that same period.
  
  
-Date: Time span for which all data in a row corresponds to 
-Compound_Score:Average of all sentiment scores. It is very small because the amount of neutrals dilutes the sentiment, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments
+Date: the start time of the 1 hr Time span for which all data in a row corresponds to 
+Compound_Score:Average of all sentiment scores. 
 n:Total volume of tweets
 Count_Negatives: Total volume of negative tweets
 Count_Positives: Total volume of positive tweets
@@ -47,13 +47,15 @@ Close:The last price during the period (1h)
 Volume (BTC):The volume of bitcoin in bitcoins that was in transactions
 Volume (Currency):The volume of bitcoin in dollars 
  
-Some days have missing data on tweets Setniment analysis obc has room for issues such as sarcasm spelling mistakes etc and since op did not provide list of 30 phrases we cannot comment on validity, i think spam tweets are filteres out (?)
+Strenghts and weaknesses: Some days have missing data on tweets Setniment analysis obc has room for issues such as sarcasm spelling mistakes etc and since op did not provide list of 30 phrases we cannot comment on validity, i think spam tweets are filteres out (?)
 
 ### Chicago Crime
 ID,  Case Number, Date, Block, IUCR, Primary Type, Description, Location Description, Arrest, Domestic, Beat, District, Ward, Community Area, FBI Code, X Coordinate, Y Coordinate, Year, Updated On, 
 Latitude, Longitude, Location
+- Historical Wards 2003-2015, Zip Codes,	Community Areas,	Census Tracts,	Wards,	Boundaries - ZIP Codes,	Police Districts, Police Beats
 
-22 col 
+
+22 col  30 col 6,981,560
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
@@ -61,6 +63,8 @@ Any user of this website providing any software application, or other secondary 
 Include the following disclaimer at the site where the software application, or other secondary or derivative application can be accessed or downloaded:
 “This site provides applications using data that has been modified for use from its original source, www.cityofchicago.org, the official website of the City of Chicago.  The City of Chicago makes no claims as to the content, accuracy, timeliness, or completeness of any of the data provided at this site.  The data provided at this site is subject to change at any time.  It is understood that the data provided at this site is being used at one’s own risk.”
 Comply with any additional Terms of Use set forth by the City agency or department providing data used by the software application, or other secondary or derivative application, including, without limitation, requirements to include additional citations or disclaimers at the site where the application can be accessed or downloaded. 
+
+strenghts weakness: a lot of detail in columns,
 
 Gold Prices (Now Redundant)
 https://www.quandl.com/data/WGC-Gold-Prices?page=3
