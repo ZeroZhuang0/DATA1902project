@@ -21,7 +21,7 @@ Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Publi
 The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
 You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.
 
-The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download tweets from 2017-08-02(01) to 2019-01-22 in order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has x rows and x columns 
+The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download tweets from 2017-08-02(01) to 2019-01-22 in order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns 
 
 
 Used GetOldTweets to download all tweets of the period. Jaime Badiola
@@ -73,6 +73,16 @@ You are permitted to save, display or print out information contained on this We
 
 USD per troy ounce  | Sources: ICE Benchmark Administration, London Metal Exchange, Shanghai Gold Exchange, World Gold Council;
 
+investing.com
+Investing.com is an online data and news website that provides financial information.
+
+under 'Use Our Data' Our services are provided for free and you are welcome to use the information and tools we provide, just please make sure to include full disclosure to Investing.com brand, logo, watermark and links if possible.
+
+Risk Disclosure: Trading in financial instruments and/or cryptocurrencies involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors. Prices of cryptocurrencies are extremely volatile and may be affected by external factors such as financial, regulatory or political events. Trading on margin increases the financial risks.
+Before deciding to trade in financial instrument or cryptocurrencies you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.
+Fusion Media would like to remind you that the data contained in this website is not necessarily real-time nor accurate. The data and prices on the website are not necessarily provided by any market or exchange, but may be provided by market makers, and so prices may not be accurate and may differ from the actual price at any given market, meaning prices are indicative and not appropriate for trading purposes. Fusion Media and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information contained within this website.
+It is prohibited to use, store, reproduce, display, modify, transmit or distribute the data contained in this website without the explicit prior written permission of Fusion Media and/or the data provider. All intellectual property rights are reserved by the providers and/or the exchange providing the data contained in this website.
+Fusion Media may be compensated by the advertisers that appear on the website, based on your interaction with the advertisements or advertisers.
 
 
 Cleaning
