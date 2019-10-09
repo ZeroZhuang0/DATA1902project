@@ -5,9 +5,11 @@ https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/downloads/bitcoin-t
 https://www.quandl.com/data/WGC/GOLD_DAILY_USD-Gold-Prices-Daily-Currency-USD
 https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2/data
 
+To Do/Details
 •Submit pdf. This should be submitted through  Turnitin,  via  the  link  in  the Canvassite.  The  report  should be targeted  at  a  tutor  or  lecturer  whose  goal  is  to  see  what  you  did,  so  they can allocate a mark. The report should have a three-section structure that corresponds  to  the  marking  scheme:  
 data, that you have clearly shown where you obtained the data,  that  you  have  described  the  contents  of  the  dataset  (explaining clearly  both  the  format,  and  the  meaning  of  the  various  aspects)
 your description shows clearly that you have appropriate rights to use the data in the ways that you do use it, and  your  explanation  shows  sensible  reflection  of  the  strengths  and limitations  of  the  data  that  you  obtained. 
+to be considered for full marks,  there  must  be  a  real  challenge  in  relating  the  data  values  in  the threesets.  It  is  not  enough  to  simply  take  datasets  that  use  the  same definitions of attributes etc, nor is it ok just to use unrelated data, where there is not connection made across the information. (maybe in introduction explain potential link between data sets)
 
 # Data
 a  section  that  describes  the  data source(s),  the format/contents  of  the  data, the  rights  associated  with  the data;
@@ -43,7 +45,7 @@ Close:The last price during the period (1h)
 Volume (BTC):The volume of bitcoin in bitcoins that was in transactions
 Volume (Currency):The volume of bitcoin in dollars 
  
-Some days have missing data on tweets Setniment analysis obc has room for issues such as sarcasm spelling mistakees etc, i think spam tweets are filteres out
+Some days have missing data on tweets Setniment analysis obc has room for issues such as sarcasm spelling mistakes etc and since op did not provide list of 30 phrases we cannot comment on validity, i think spam tweets are filteres out (?)
 
 ### Chicago Crime
 ID,  Case Number, Date, Block, IUCR, Primary Type, Description, Location Description, Arrest, Domestic, Beat, District, Ward, Community Area, FBI Code, X Coordinate, Y Coordinate, Year, Updated On, 
