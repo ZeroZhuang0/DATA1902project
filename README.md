@@ -12,6 +12,8 @@ data, that you have clearly shown where you obtained the data,  that  you  have 
 your description shows clearly that you have appropriate rights to use the data in the ways that you do use it, and  your  explanation  shows  sensible  reflection  of  the  strengths  and limitations  of  the  data  that  you  obtained. 
 to be considered for full marks,  there  must  be  a  real  challenge  in  relating  the  data  values  in  the threesets.  It  is  not  enough  to  simply  take  datasets  that  use  the  same definitions of attributes etc, nor is it ok just to use unrelated data, where there is not connection made across the information. (maybe in introduction explain potential link between data sets)
 
+### Intro
+
 # Data
 a  section  that  describes  the  data source(s),  the format/contents  of  the  data, the  rights  associated  with  the data;
 (Pretty Sure We Describe the Raw Data not the cleaned)
@@ -50,12 +52,36 @@ Volume (Currency):The volume of bitcoin in dollars
 Strenghts and weaknesses: Some days have missing data on tweets Setniment analysis obc has room for issues such as sarcasm spelling mistakes etc and since op did not provide list of 30 phrases we cannot comment on validity, i think spam tweets are filteres out (?)
 
 ### Chicago Crime
-ID,  Case Number, Date, Block, IUCR, Primary Type, Description, Location Description, Arrest, Domestic, Beat, District, Ward, Community Area, FBI Code, X Coordinate, Y Coordinate, Year, Updated On, 
-Latitude, Longitude, Location
+from chicago "This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified."
+
+ID: unique identifier,  
+Case Number: Chicago Police Department Records Division Number also unique, 
+Date: date + time sometimes just an estimate, 
+Block: partially redacted address such that block remains the same, 
+IUCR: Illinois Uniform Crime Reporting (IUCR) codes are four digit codes that law enforcement agencies use to classify criminal incidents when taking individual reports is directly linked to primary tyep and descriptionn, 
+Primary Type: primary description of IUCR, 
+Description: secondary description of IUCR primary description subcategory, 
+Location Description: description of location like location type, 
+Arrest: T/F if arrest was made, 
+Domestic: T/F if classified as domestic related by Illnois Domestic Violence Act, 
+Beat: beat where it occured smallest police geographic area, 
+District: police district , 
+Ward: ward a city council district, 
+Community Area: community area there are 77 in chicago, 
+FBI Code: calssification code under National Incident-Based Reporting System (NIBRS), 
+X Coordinate, 
+Y Coordinate, 
+Year, 
+Updated On: date and time, 
+Latitude, 
+Longitude, 
+Location: combines long ang lat,
+
+all location shifted for partial redaction but block remains same
+DD/MM/YYY 12hr amp/pm h:m:s 
 - Historical Wards 2003-2015, Zip Codes,	Community Areas,	Census Tracts,	Wards,	Boundaries - ZIP Codes,	Police Districts, Police Beats
 
-
-22 col  30 col 6,981,560
+22 col  6,981,560(???)
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
@@ -65,6 +91,7 @@ Include the following disclaimer at the site where the software application, or 
 Comply with any additional Terms of Use set forth by the City agency or department providing data used by the software application, or other secondary or derivative application, including, without limitation, requirements to include additional citations or disclaimers at the site where the application can be accessed or downloaded. 
 
 strenghts weakness: a lot of detail in columns,
+"These crimes may be based upon preliminary information supplied to the Police Department by the reporting parties that have not been verified. The preliminary crime classifications may be changed at a later date based upon additional investigation and there is always the possibility of mechanical or human error. Therefore, the Chicago Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. The Chicago Police Department will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information"
 
 Gold Prices (Now Redundant)
 https://www.quandl.com/data/WGC-Gold-Prices?page=3
