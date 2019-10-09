@@ -53,6 +53,7 @@ Some days have missing data on tweets Setniment analysis obc has room for issues
 ID,  Case Number, Date, Block, IUCR, Primary Type, Description, Location Description, Arrest, Domestic, Beat, District, Ward, Community Area, FBI Code, X Coordinate, Y Coordinate, Year, Updated On, 
 Latitude, Longitude, Location
 
+22 col 
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
