@@ -23,7 +23,7 @@ Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Publi
 "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
 You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission." 
 
-The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download the 17.7 million + tweets from 2017-08-02(01) to 2019-01-22 with which  order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns. Other than information on tweets the dataset also contains bitcoin information at the same hourly time periods the tweets are sorted in. the creater gave  sentiment score was assigned to each tweet using library VaderSentiment which assings a numerical value to h, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments
+The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download the 17.7 million + tweets from 2017-08-02(01) to 2019-01-22 with which  order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns. the data is presented in hourly periods with onformation about the number of tweets in that period and also sentiment data associated with those tweets  the creater gave  sentiment score was assigned to each tweet using library VaderSentiment which assings a numerical value to h, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments. Other than information on tweets the dataset also contains bitcoin information at the same hourly time periods the tweets are sorted in.
 
 
 Used GetOldTweets to download all tweets of the period. Jaime Badiola
@@ -34,7 +34,7 @@ Small description
  I collected over 17.7 million tweets  This dataset contains the average sentiment of all tweets about bitcoin  How did I do sentiment analysis? library VaderSentiment. I added about 30 expressions  and words to the dictionary. To score the expressions I used the same methodology as the authors described in their paper.It also contains the financial data of bitcoin for that same period.
  
  
-Date: the start time of the 1 hr Time span for which all data in a row corresponds to 
+Date: the start time of the 1 hr Time span for which all data in a row corresponds to date yyyy-mm-dd hh:mm:ss 24 hour time
 Compound_Score:Average of all sentiment scores. 
 n:Total volume of tweets
 Count_Negatives: Total volume of negative tweets
@@ -50,6 +50,7 @@ Volume (BTC):The volume of bitcoin in bitcoins that was in transactions
 Volume (Currency):The volume of bitcoin in dollars 
  
 Strenghts and weaknesses: Some days have missing data on tweets Setniment analysis obc has room for issues such as sarcasm spelling mistakes etc and since op did not provide list of 30 phrases we cannot comment on validity, i think spam tweets are filteres out (?)
+doesnt really give us a time zone 
 
 ### Chicago Crime
 from chicago "This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified."
@@ -125,3 +126,6 @@ and  a  section  that describes  and  explains some simple  analysis  that  you 
 
 There is no required minimum or maximum length for the report; write whatever is needed to show the reader that you have earned the marks, and don’t say more than that!
 
+#Reference
+https://creativecommons.org/publicdomain/zero/1.0/
+https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/downloads/bitcoin-tweets-and-price.zip/2
