@@ -6,6 +6,7 @@ https://www.quandl.com/data/WGC/GOLD_DAILY_USD-Gold-Prices-Daily-Currency-USD
 https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2/data
 
 To Do/Details (more info abt cleaning and prelim analysis at bottom)
+
 •Submit pdf. This should be submitted through  Turnitin,  via  the  link  in  the Canvassite.  The  report  should be targeted  at  a  tutor  or  lecturer  whose  goal  is  to  see  what  you  did,  so  they can allocate a mark. The report should have a three-section structure that corresponds  to  the  marking  scheme:  
 data, that you have clearly shown where you obtained the data,  that  you  have  described  the  contents  of  the  dataset  (explaining clearly  both  the  format,  and  the  meaning  of  the  various  aspects)
 your description shows clearly that you have appropriate rights to use the data in the ways that you do use it, and  your  explanation  shows  sensible  reflection  of  the  strengths  and limitations  of  the  data  that  you  obtained. 
@@ -20,7 +21,7 @@ Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Publi
 The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
 You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.
 
-The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download tweets from 2017-08-02(01) to 2019-01-22 in order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) 
+The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download tweets from 2017-08-02(01) to 2019-01-22 in order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has x rows and x columns 
 
 
 Used GetOldTweets to download all tweets of the period. Jaime Badiola
@@ -33,7 +34,7 @@ Small description
  
 Date: Time span for which all data in a row corresponds to 
 Compound_Score:Average of all sentiment scores. It is very small because the amount of neutrals dilutes the sentiment, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments
-nTotal volume of tweets
+n:Total volume of tweets
 Count_Negatives: Total volume of negative tweets
 Count_Positives: Total volume of positive tweets
 Count_Neutrals: Total volume of neutral tweets
