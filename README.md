@@ -116,7 +116,7 @@ There is no required minimum or maximum length for the report; write whatever is
 
 # References
 https://creativecommons.org/publicdomain/zero/1.0/
-https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/
+https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/version/2
 
 https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2/data
 https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html
