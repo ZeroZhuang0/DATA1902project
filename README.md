@@ -24,11 +24,8 @@ Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Publi
 You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission." 
 
 The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download the 17.7 million + tweets from 2017-08-02(01) to 2019-01-22 with which  order to create the dataset. The most recent update was Version 2 (Tweets filtered to avoid bots sentiment skewing averages) on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns. the data is presented in hourly periods with onformation about the number of tweets in that period and also sentiment data associated with those tweets  the creater gave  sentiment score was assigned to each tweet using library VaderSentiment which assings a numerical value to h, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments. Other than information on tweets the dataset also contains bitcoin information at the same hourly time periods the tweets are sorted in.
-
  
-Small description
- I collected over 17.7 million tweets  This dataset contains the average sentiment of all tweets about bitcoin  How did I do sentiment analysis? library VaderSentiment. I added about 30 expressions  and words to the dictionary. To score the expressions I used the same methodology as the authors described in their paper.It also contains the financial data of bitcoin for that same period.
- 
+I added about 30 expressions  and words to the dictionary. To score the expressions I used the same methodology as the authors described in their paper.
  
 Date: the start time of the 1 hr Time span for which all data in a row corresponds to date yyyy-mm-dd hh:mm:ss 24 hour time
 Compound_Score:Average of all sentiment scores. 
@@ -78,7 +75,6 @@ Location: combines long ang lat,
 
 all location shifted for partial redaction but block remains same
 DD/MM/YYY 12hr amp/pm h:m:s 
-- Historical Wards 2003-2015, Zip Codes,	Community Areas,	Census Tracts,	Wards,	Boundaries - ZIP Codes,	Police Districts, Police Beats
 
 22 col 2099624 (incl header)
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
@@ -98,7 +94,7 @@ https://www.quandl.com/data/WGC-Gold-Prices?page=3
 This is open data that we’ve sourced and made freely available to you.’
 
 2 x 2542 incl header  
-Date	Value 2019-09-27 2010-01-01
+Date	Value 2019-09-27 TO 2010-01-01
 
 From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
  
@@ -107,6 +103,7 @@ You are permitted to save, display or print out information contained on this We
 
 USD per troy ounce  | Sources: ICE Benchmark Administration, London Metal Exchange, Shanghai Gold Exchange, World Gold Council;
 
+ADV AND DIS: simple
 
 
 # Cleaning
@@ -140,3 +137,4 @@ Fusion Media would like to remind you that the data contained in this website is
 It is prohibited to use, store, reproduce, display, modify, transmit or distribute the data contained in this website without the explicit prior written permission of Fusion Media and/or the data provider. All intellectual property rights are reserved by the providers and/or the exchange providing the data contained in this website.
 Fusion Media may be compensated by the advertisers that appear on the website, based on your interaction with the advertisements or advertisers.
 
+- Historical Wards 2003-2015, Zip Codes,	Community Areas,	Census Tracts,	Wards,	Boundaries - ZIP Codes,	Police Districts, Police Beats
