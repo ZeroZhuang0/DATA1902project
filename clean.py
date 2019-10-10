@@ -131,7 +131,12 @@ print(df_bitcoin_tweets.columns)
 print(df_boston_crimes.columns)
 
 # Aggregating each day into one row for the bitcoin tweets dataframe
-print(df_bitcoin_tweets.groupby("date")["compound_score"].mean()) # Testing
+df_bitcoin_tweets["compound_score_weighted"] = df_bitcoin_tweets["compound_score"]* \
+                                                df_bitcoin_tweets["total_volume_of_tweets"]
+df_bitcoin_tweets_agg = df_bitcoin_tweets.groupby("date")["compound_score_weighted"].mean()
+df_bitcoin_tweets_agg["total_volume_of_tweets"] = df_bitcoin_tweets.groupby("date")["total_volume_of_tweets"].sum()[1]
+df_bitcoin_tweets_agg["compound_score_weighted"] = float(df_bitcoin_tweets_agg["compound_score_weighted"])/df_bitcoin_tweets_agg["total_volume_of_tweets"]
+print(df_bitcoin_tweets_agg) # Testing
 
 # Testing
 print(df_gold.head())
