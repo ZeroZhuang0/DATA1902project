@@ -118,7 +118,7 @@ df_gold = setNewDates(df_gold)
 df_boston_crimes = setNewDates(df_boston_crimes)
 df_bitcoin_tweets = setNewDates(df_bitcoin_tweets)
 
-df_boston_crimes = df_boston_crimes[:-8]
+df_boston_crimes = df_boston_crimes.drop(df_boston_crimes.iloc[:, 22:30], axis = 1)
 print(df_boston_crimes.columns)
 
 # Testing
