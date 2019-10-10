@@ -1,4 +1,4 @@
-Date,Compound_Score,Total Volume of Tweets,Count_Negatives,Count_Positives,Count_Neutrals,Sent_Negatives,Sent_Positives,Count_News,Count_Bots,Open,High,Low,Close,Volume (BTC),Volume (Currency)
+date,compound_score,total_volume_of_tweets,count_negatives,count_positives,count_neutrals,sent_negatives,sent_positives,count_news,count_bots,open,high,low,close,volume_btc,volume_currency
 2017-08-01,0.08289331823329567,1027.0,139.0,347.0,397.0,-0.5166201438848912,0.4178818443804035,695.0,144.0,2855.81,2863.06,2823.0,2825.92,184.02,"522951,00"
 2017-08-01,0.05315977564102566,778.0,111.0,193.0,320.0,-0.4234018018018017,0.4153849740932644,493.0,154.0,2823.01,2860.02,2821.01,2853.38,77.3,219605.16
 2017-08-01,0.12425079872204475,836.0,89.0,273.0,264.0,-0.4409382022471911,0.4286611721611719,510.0,210.0,2846.27,2858.04,2837.31,2841.6,135.83,386739.15
