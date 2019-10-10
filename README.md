@@ -76,7 +76,7 @@ Location: combines long ang lat,
 all location shifted for partial redaction but block remains same
 DD/MM/YYY 12hr amp/pm h:m:s 
 
-22 col 2099624 (incl header)
+22 col 2099624 (incl header)  2017-08-01
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
