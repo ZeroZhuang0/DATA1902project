@@ -28,27 +28,9 @@ from MM/DD/YYYY HH:MM:SS AM/PM to YYYY-MM-DD
 which is the ISO 8601 standard 
 '''
 new_dates = []
-#flag = False
 for date_string in date_boston_crimes:
     splitted = str(date_string).split()
     splitted = splitted[0].split("/")
-    
-    #if str(date_string) == "nan":
-    #    continue
-
-    #Testing
-    #if flag == True:
-    #    print(splitted)
-    #    print()
-    #    flag = False
-    
-    # Testing
-    #if len(splitted) != 3:
-    #    print(prev)
-    #    print(splitted)
-    #    flag = True
-    #    prev = splitted
-    #    continue
     
     month, day, year = splitted
     splitted[0] = year
@@ -56,7 +38,6 @@ for date_string in date_boston_crimes:
     splitted[2] = day
     
     new_dates.append("-".join(splitted))
-    #prev = splitted #Testing
 
 date_boston_crimes = pd.Series(new_dates)
 print(date_boston_crimes.tail()) # Testing
@@ -118,8 +99,14 @@ df_gold = setNewDates(df_gold)
 df_boston_crimes = setNewDates(df_boston_crimes)
 df_bitcoin_tweets = setNewDates(df_bitcoin_tweets)
 
+# Removing the last 8 columns due to redundancy
 df_boston_crimes = df_boston_crimes.drop(df_boston_crimes.iloc[:, 22:30], axis = 1)
-print(df_boston_crimes.columns)
+
+# Making all column names lowercase
+df_boston_crimes = map(
+
+# Aggregating each day into one row for the bitcoin tweets dataframe
+print(df_bitcoin_tweets.groupby("Date")["Compound_Score"].average()) # Testing
 
 # Testing
 print(df_gold.head())
