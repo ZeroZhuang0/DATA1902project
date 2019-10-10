@@ -6,12 +6,6 @@ def string_to_date(s):
   month=s.split("-")[1]
   day=s.split("-")[2] 
   return date(year = int(year) , month = int(month), day = int(day))
-t1 = date(year = 2020 , month = 1, day = 1)
-t2 = date(year = 2019 , month = 12, day = 31)
-one_day=timedelta(days=1)
-print((t1-t2).total_seconds()==86400)
-t1=t1-one_day
-t1.isoformat()
 i=0
 pre=None
 result = pd.DataFrame(columns=["Date","Value"])
