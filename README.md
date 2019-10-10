@@ -98,7 +98,7 @@ https://www.quandl.com/data/WGC-Gold-Prices?page=3
 This is open data that we’ve sourced and made freely available to you.’
 
 2 x 2542 incl header  
-Date	Value 2019-09-27
+Date	Value 2019-09-27 2010-01-01
 
 From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
  
@@ -107,16 +107,6 @@ You are permitted to save, display or print out information contained on this We
 
 USD per troy ounce  | Sources: ICE Benchmark Administration, London Metal Exchange, Shanghai Gold Exchange, World Gold Council;
 
-investing.com
-Investing.com is an online data and news website that provides financial information.
-
-under 'Use Our Data' Our services are provided for free and you are welcome to use the information and tools we provide, just please make sure to include full disclosure to Investing.com brand, logo, watermark and links if possible.
-
-Risk Disclosure: Trading in financial instruments and/or cryptocurrencies involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors. Prices of cryptocurrencies are extremely volatile and may be affected by external factors such as financial, regulatory or political events. Trading on margin increases the financial risks.
-Before deciding to trade in financial instrument or cryptocurrencies you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.
-Fusion Media would like to remind you that the data contained in this website is not necessarily real-time nor accurate. The data and prices on the website are not necessarily provided by any market or exchange, but may be provided by market makers, and so prices may not be accurate and may differ from the actual price at any given market, meaning prices are indicative and not appropriate for trading purposes. Fusion Media and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information contained within this website.
-It is prohibited to use, store, reproduce, display, modify, transmit or distribute the data contained in this website without the explicit prior written permission of Fusion Media and/or the data provider. All intellectual property rights are reserved by the providers and/or the exchange providing the data contained in this website.
-Fusion Media may be compensated by the advertisers that appear on the website, based on your interaction with the advertisements or advertisers.
 
 
 # Cleaning
@@ -138,3 +128,15 @@ https://www.quandl.com/data/WGC-Gold-Prices?page=3
 https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
 https://www.gold.org/goldhub/data/gold-prices
 https://www.gold.org/terms-and-conditions
+
+investing.com
+Investing.com is an online data and news website that provides financial information.
+
+under 'Use Our Data' Our services are provided for free and you are welcome to use the information and tools we provide, just please make sure to include full disclosure to Investing.com brand, logo, watermark and links if possible.
+
+Risk Disclosure: Trading in financial instruments and/or cryptocurrencies involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors. Prices of cryptocurrencies are extremely volatile and may be affected by external factors such as financial, regulatory or political events. Trading on margin increases the financial risks.
+Before deciding to trade in financial instrument or cryptocurrencies you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.
+Fusion Media would like to remind you that the data contained in this website is not necessarily real-time nor accurate. The data and prices on the website are not necessarily provided by any market or exchange, but may be provided by market makers, and so prices may not be accurate and may differ from the actual price at any given market, meaning prices are indicative and not appropriate for trading purposes. Fusion Media and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information contained within this website.
+It is prohibited to use, store, reproduce, display, modify, transmit or distribute the data contained in this website without the explicit prior written permission of Fusion Media and/or the data provider. All intellectual property rights are reserved by the providers and/or the exchange providing the data contained in this website.
+Fusion Media may be compensated by the advertisers that appear on the website, based on your interaction with the advertisements or advertisers.
+
