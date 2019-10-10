@@ -92,7 +92,7 @@ Comply with any additional Terms of Use set forth by the City agency or departme
 strenghts weakness: a lot of detail in columns,
 "These crimes may be based upon preliminary information supplied to the Police Department by the reporting parties that have not been verified. The preliminary crime classifications may be changed at a later date based upon additional investigation and there is always the possibility of mechanical or human error. Therefore, the Chicago Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. The Chicago Police Department will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information"
 
-### Gold Prices (Now Redundant)
+### Gold Prices
 https://www.quandl.com/data/WGC-Gold-Prices?page=3
 ‘This database contains all of the available indicators published by the World Gold Council, included is data on the trading prices on all the major gold trading countries.
 This is open data that we’ve sourced and made freely available to you.’
