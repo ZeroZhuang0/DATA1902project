@@ -123,8 +123,8 @@ https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html
 
 https://www.quandl.com/data/WGC-Gold-Prices?page=3
 https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
-https://www.gold.org/goldhub/data/gold-prices
-https://www.gold.org/terms-and-conditions
+https://www.gold.org/goldhub/data/gold-prices 
+https://www.gold.org/terms-and-conditions 
 
 investing.com
 Investing.com is an online data and news website that provides financial information.
