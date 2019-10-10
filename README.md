@@ -97,6 +97,9 @@ https://www.quandl.com/data/WGC-Gold-Prices?page=3
 ‘This database contains all of the available indicators published by the World Gold Council, included is data on the trading prices on all the major gold trading countries.
 This is open data that we’ve sourced and made freely available to you.’
 
+2 x 2542 incl header  
+Date	Value 2019-09-27
+
 From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
  
 Use of this website: This Website and the information and materials on this Website are provided for general informational and educational purposes only.
