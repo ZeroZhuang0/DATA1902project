@@ -103,10 +103,35 @@ df_bitcoin_tweets = setNewDates(df_bitcoin_tweets)
 df_boston_crimes = df_boston_crimes.drop(df_boston_crimes.iloc[:, 22:30], axis = 1)
 
 # Making all column names lowercase
-df_boston_crimes = map(
+def column_names_tolower(df):
+    df.columns = map(str.lower, df.columns)
+
+column_names_tolower(df_gold)
+column_names_tolower(df_boston_crimes)
+column_names_tolower(df_bitcoin_tweets)
+
+# Renaming column names to snakecase
+df_boston_crimes = df_boston_crimes.rename(columns = {
+    "case number":"case_number",
+    "primary type":"primary_type",
+    "location description":"location_description",
+    "community area":"community_area",
+    "fbi code":"fbi_code",
+    "x coordinate":"x_coordinate",
+    "y coordinate":"y_coordinate",
+    "updated on":"updated_on"})
+        
+df_bitcoin_tweets = df_bitcoin_tweets.rename(columns = {
+    "total volume of tweets":"total_volume_of_tweets",
+    "volume (btc)":"volume_btc",
+    "volume (currency)":"volume_currency"})
+
+# Testing
+print(df_bitcoin_tweets.columns)
+print(df_boston_crimes.columns)
 
 # Aggregating each day into one row for the bitcoin tweets dataframe
-print(df_bitcoin_tweets.groupby("Date")["Compound_Score"].average()) # Testing
+print(df_bitcoin_tweets.groupby("date")["compound_score"].mean()) # Testing
 
 # Testing
 print(df_gold.head())
