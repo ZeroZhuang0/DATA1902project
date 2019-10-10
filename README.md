@@ -23,12 +23,8 @@ Usage information: license - cc0:public domain CC0 1.0 Universal (CC0 1.0) Publi
 "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
 You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission." 
 
-The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download the 17.7 million + tweets from 2017-08-02(01) to 2019-01-22 with which  order to create the dataset. The most recent update was Version 2 on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns. the data is presented in hourly periods with onformation about the number of tweets in that period and also sentiment data associated with those tweets  the creater gave  sentiment score was assigned to each tweet using library VaderSentiment which assings a numerical value to h, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments. Other than information on tweets the dataset also contains bitcoin information at the same hourly time periods the tweets are sorted in.
+The data was from Kaggle, uploaded on 2019-02-13 by Jaime Badiola who used the github ‘GetOldTweets’ to download the 17.7 million + tweets from 2017-08-02(01) to 2019-01-22 with which  order to create the dataset. The most recent update was Version 2 (Tweets filtered to avoid bots sentiment skewing averages) on 2019-06-15. (which is what was used in this project) the Data has 12936 rows (not including header) and 14 columns. the data is presented in hourly periods with onformation about the number of tweets in that period and also sentiment data associated with those tweets  the creater gave  sentiment score was assigned to each tweet using library VaderSentiment which assings a numerical value to h, where numeric sclae with 0 beign neutral and - beeing native and + values corresponding to posistive setniments. Other than information on tweets the dataset also contains bitcoin information at the same hourly time periods the tweets are sorted in.
 
-
-Used GetOldTweets to download all tweets of the period. Jaime Badiola
-2017-08-02 to 2019-01-22
-Date created 2019-02-13 Last updated 2019-06-15 Current version Version 2
  
 Small description
  I collected over 17.7 million tweets  This dataset contains the average sentiment of all tweets about bitcoin  How did I do sentiment analysis? library VaderSentiment. I added about 30 expressions  and words to the dictionary. To score the expressions I used the same methodology as the authors described in their paper.It also contains the financial data of bitcoin for that same period.
@@ -55,8 +51,10 @@ doesnt really give us a time zone
 ### Chicago Crime
 from chicago "This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified."
 
+constantly updated
+
 ID: unique identifier,  
-Case Number: Chicago Police Department Records Division Number also unique, 
+Case Number: Chicago Police Department Records Division  Number also unique, 
 Date: date + time sometimes just an estimate, 
 Block: partially redacted address such that block remains the same, 
 IUCR: Illinois Uniform Crime Reporting (IUCR) codes are four digit codes that law enforcement agencies use to classify criminal incidents when taking individual reports is directly linked to primary tyep and descriptionn, 
@@ -82,7 +80,7 @@ all location shifted for partial redaction but block remains same
 DD/MM/YYY 12hr amp/pm h:m:s 
 - Historical Wards 2003-2015, Zip Codes,	Community Areas,	Census Tracts,	Wards,	Boundaries - ZIP Codes,	Police Districts, Police Beats
 
-22 col  6,981,560(???) 6,982,341
+22 col 2099624 (incl header)
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and 
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
@@ -94,12 +92,12 @@ Comply with any additional Terms of Use set forth by the City agency or departme
 strenghts weakness: a lot of detail in columns,
 "These crimes may be based upon preliminary information supplied to the Police Department by the reporting parties that have not been verified. The preliminary crime classifications may be changed at a later date based upon additional investigation and there is always the possibility of mechanical or human error. Therefore, the Chicago Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. The Chicago Police Department will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information"
 
-Gold Prices (Now Redundant)
+### Gold Prices (Now Redundant)
 https://www.quandl.com/data/WGC-Gold-Prices?page=3
 ‘This database contains all of the available indicators published by the World Gold Council, included is data on the trading prices on all the major gold trading countries.
 This is open data that we’ve sourced and made freely available to you.’
 
-From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ 
+From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
  
 Use of this website: This Website and the information and materials on this Website are provided for general informational and educational purposes only.
 You are permitted to save, display or print out information contained on this Website only for your personal, non-commercial use.
@@ -118,14 +116,22 @@ It is prohibited to use, store, reproduce, display, modify, transmit or distribu
 Fusion Media may be compensated by the advertisers that appear on the website, based on your interaction with the advertisements or advertisers.
 
 
-Cleaning
+# Cleaning
 a  section  that  describes  the  initial  transformation  and  cleaning  that you  did  (include  here  the parts  of  Python code  that  you  used,  or  a description  that  is  detailed  enough  to  be followed);  
 
-Preliminary Analysis
+# Preliminary Analysis
 and  a  section  that describes  and  explains some simple  analysis  that  you  have  done  (again, show the code and also the output of the analysis). 
 
 There is no required minimum or maximum length for the report; write whatever is needed to show the reader that you have earned the marks, and don’t say more than that!
 
-#Reference
+# Reference
 https://creativecommons.org/publicdomain/zero/1.0/
-https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/downloads/bitcoin-tweets-and-price.zip/2
+https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/
+
+https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2/data
+https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html
+
+https://www.quandl.com/data/WGC-Gold-Prices?page=3
+https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
+https://www.gold.org/goldhub/data/gold-prices
+https://www.gold.org/terms-and-conditions
