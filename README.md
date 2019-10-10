@@ -124,7 +124,7 @@ and  a  section  that describes  and  explains some simple  analysis  that  you 
 
 There is no required minimum or maximum length for the report; write whatever is needed to show the reader that you have earned the marks, and don’t say more than that!
 
-# Reference
+# References
 https://creativecommons.org/publicdomain/zero/1.0/
 https://www.kaggle.com/jaimebadiola/bitcoin-tweets-and-price/
 
