@@ -1,4 +1,4 @@
-# Data
+# Report
 a  section  that  describes  the  data source(s),  the format/contents  of  the  data, the  rights  associated  with  the data;
 (Pretty Sure We Describe the Raw Data not the cleaned)
 
@@ -40,34 +40,35 @@ I added about 30 expressions  and words to the dictionary. To score the expressi
 ### Chicago Crime
 from chicago "This dataset reflects reported incidents of crime  that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified."
 
-all location shifted for partial redaction but block remains same
+The Chicago Crime dataset is from the Chicago City Portal regularly updated so that the data reflect from 2001 to present minues the last seven days. the data itself is extracted from hicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. the downloaded data set has 22 columns and 2099624 (incl header) contains data on crimes from 04/04/2012 - 28/9/2019 most recently updated on 09/10/2019 (earliest update i was able to fine 04/02/2016). 
 
 from a constantly updated downloaded 22 col 2099624 (incl header),each reported incident of crime  each row is data for a single crime has its own ID and case number 
-date and time of the crime which stes smtimes just an estimate , different formats for location thats with more sepcific forms its partially redacted so that the block remainds the same ,and duscriotion of fcrime through different several forms of classification for the type of crime. whether or not dometisc or if an arrest was made and the date when the data fro that row was last updated
+date and time of the crime which stes smtimes just an estimate , different formats for location thats with more sepcific forms its 
+all location shifted for partial redaction but block remains same partially redacted so that the block remainds the same ,and duscriotion of fcrime through different several forms of classification for the type of crime. whether or not dometisc or if an arrest was made and the date when the data fro that row was last updated, partially redacted address such that block remains the same, 
 
 22 col 2099624 (incl header)  2017-08-01
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and
-9/28/2019   10/05/2019
+9/28/2019      10/05/2019
 04/04/2012       2/10/2016 02/04/2016
 
 
-ID: unique identifier,  
+ID: unique identifier for the reported crime
 Case Number: Chicago Police Department Records Division  Number also unique 
-Date: date + time sometimes just an estimate, mm:dd:yyyy 12hr amp/pm h:m:s 
-Block: partially redacted address such that block remains the same, 
-IUCR: Illinois Uniform Crime Reporting (IUCR) codes are four digit codes that law enforcement agencies use to classify criminal incidents when taking individual reports is directly linked to primary tyep and descriptionn, 
-Primary Type: primary description of IUCR, 
-Description: secondary description of IUCR primary description subcategory, 
-Location Description: description of location like location type, 
-Arrest: T/F if arrest was made, 
-Domestic: T/F if classified as domestic related by Illnois Domestic Violence Act, 
-Beat: beat where it occured smallest police geographic area, 
-District: police district , 
-Ward: ward a city council district, 
-Community Area: community area there are 77 in chicago, 
-FBI Code: calssification code under National Incident-Based Reporting System (NIBRS), 
-X Coordinate, 
-Y Coordinate, 
+Date: date and time in 12h hr time, format mm:dd:yyyy hh:mm:ss am/pm 
+Block: refers to location, the block where crime took place
+IUCR: Illinois Uniform Crime Reporting (IUCR) codes, four digit code used to classify criminal incidents when taking individual reports is directly linked to primary type and descriptionn, 
+Primary Type: primary description of IUCR code
+Description: secondary description of IUCR code, a subcategory of the primary description 
+Location Description: short description of location type, where crime occured
+Arrest: True/False, whether or not an arrest was made
+Domestic: True/False, whether or not classified as domestic according to the Illnois Domestic Violence Act
+Beat: the beat, smallest police geographic are, where crime occured, four didgit
+District: the police district, where crime occured 3 digit
+Ward: the ward, a city council district, where crime occured
+Community Area: community area, Chicago has 77 community areas from 1-77
+FBI Code: calssification code under National Incident-Based Reporting System (NIBRS), 2-3 digit 12 alphanumeric 
+X Coordinate, 7 dig
+Y Coordinate, 7
 Year, 
 Updated On: date and time,  mm:dd:yyyy 12hr amp/pm h:m:s 
 Latitude, 
@@ -92,9 +93,6 @@ https://www.quandl.com/data/WGC-Gold-Prices?page=3
 ‘This database contains all of the available indicators published by the World Gold Council, included is data on the trading prices on all the major gold trading countries.
 This is open data that we’ve sourced and made freely available to you.’
 
-2 x 2542 incl header  
-Date	Value 2019-09-27 TO 2010-01-01 yyyy:mm:dd
-
 From quandl which has compiled data from https://www.gold.org/goldhub/data/gold-prices. States that ‘If you are using free data from Quandl, you have to adhere to the terms and conditions of the original source of the data, including their terms for citing/redistributing data.’ https://help.quandl.com/article/362-what-are-the-terms-of-use-for-free-data-feeds
  
 Use of this website: This Website and the information and materials on this Website are provided for general informational and educational purposes only.
@@ -102,8 +100,13 @@ You are permitted to save, display or print out information contained on this We
 
 USD per troy ounce  | Sources: ICE Benchmark Administration, London Metal Exchange, Shanghai Gold Exchange, World Gold Council;
 
-ADV AND DIS: simple
+2 x 2542 incl header  
+Date	Value 
+2019-09-27 TO 2010-01-01 yyyy:mm:dd
+daily gold price in USD per troy ounce
 
+
+ADV AND DIS: simple, date in yyyy:mm:dd easiest to sort
 
 # References
 https://creativecommons.org/publicdomain/zero/1.0/
