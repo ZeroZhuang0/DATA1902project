@@ -52,6 +52,9 @@ df_bitcoin_tweets_agg.insert(12, "low", df_bitcoin_tweets.groupby("date", as_ind
 # Creating a column for the closing price
 df_bitcoin_tweets_agg.insert(13, "close", df_bitcoin_tweets.groupby("date", as_index = False)["close"].last().iloc[:,1])
 
+# Creating a new column for the percentage change in bitcoin value for each day
+df_bitcoin_tweets_agg.insert(14, "bitcoin_close_change", df_bitcoin_tweets_agg['close'].pct_change() * 100)
+
 # Changing the types of each column to their appropriate type
 convert_dict = {"date": str,
                 "compound_score_weighted": float,
@@ -67,12 +70,10 @@ convert_dict = {"date": str,
                 "high": float,
                 "low": float,
                 "close": float,
+                "bitcoin_close_change": float,
                 "volume_btc": float,
                 "volume_currency": float}
 df_bitcoin_tweets_agg = df_bitcoin_tweets_agg.astype(convert_dict)
-
-# Creating a new column the percentage change in gold value for each day
-df_bitcoin_tweets_agg['bitcoin_change'] = df_bitcoin_tweets_agg['close'].pct_change()*100
 
 
 # Testing

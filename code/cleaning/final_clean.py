@@ -3,28 +3,29 @@ import checks_clean as clean # For cleaning checks
 import pandas as pd # For working with the datasets
 
 # Reading each dataframe from modified csv files 
-df_gold = pd.read_csv("../../datasets/modified/gold_mod.csv", index_col = False)
-df_boston_crimes = pd.read_csv("../../datasets/aggregated/boston_crimes_agg.csv", index_col = False)
+df_gold = pd.read_csv("../../datasets/aggregated/gold_agg.csv", index_col = False)
+df_chicago_crimes = pd.read_csv("../../datasets/aggregated/boston_crimes_agg.csv", index_col = False)
 df_bitcoin_tweets = pd.read_csv("../../datasets/aggregated/bitcoin_tweets_agg.csv", index_col = False)
 
-df_list = [df_gold, df_boston_crimes, df_bitcoin_tweets] # List of dfs for later use
+df_list = [df_gold, df_chicago_crimes, df_bitcoin_tweets] # List of dfs for later use
 
     ## Checking types of each column
 
 clean.check_type(df_gold["date"], str)
 clean.check_type(df_gold["value"], float)
+clean.check_type(df_gold["gold_change"], float)
 
-clean.check_type(df_boston_crimes["date"], str)
-clean.check_type(df_boston_crimes["total_crimes"], int)
-clean.check_type(df_boston_crimes["computer_related"], int)
-clean.check_type(df_boston_crimes["financial_crimes"], int)
-clean.check_type(df_boston_crimes["num_arrests"], int)
-clean.check_type(df_boston_crimes["num_domestic"], int)
-clean.check_type(df_boston_crimes["avg_latitude"], float)
-clean.check_type(df_boston_crimes["avg_longitude"], float)
+clean.check_type(df_chicago_crimes["date"], str)
+clean.check_type(df_chicago_crimes["total_crimes"], int)
+clean.check_type(df_chicago_crimes["computer_related"], int)
+clean.check_type(df_chicago_crimes["financial_crimes"], int)
+clean.check_type(df_chicago_crimes["num_arrests"], int)
+clean.check_type(df_chicago_crimes["num_domestic"], int)
+clean.check_type(df_chicago_crimes["avg_latitude"], float)
+clean.check_type(df_chicago_crimes["avg_longitude"], float)
 
 clean.check_type(df_bitcoin_tweets["date"], str)
-for col in list(df_bitcoin_tweets.columns[i] for i in [1, 6, 7, 10, 11, 12, 13, 14, 15]):
+for col in list(df_bitcoin_tweets.columns[i] for i in [1, 6, 7, 10, 11, 12, 13, 14, 15, 16]):
     clean.check_type(df_bitcoin_tweets[col], float)
 for col in list(df_bitcoin_tweets.columns[i] for i in [2, 3, 4, 5, 8, 9]):
     clean.check_type(df_bitcoin_tweets[col], int)
@@ -64,11 +65,11 @@ clean.check_tweets(total, positive, negative, neutral, bots)
 
 # Checking if certain columns are larger than 0
 
-for col in list(df_bitcoin_tweets.columns[i] for i in [2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15]):
+for col in list(df_bitcoin_tweets.columns[i] for i in [2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16]):
     clean.check_greater_than_zero(df_bitcoin_tweets[col])
 
-for col in list(df_boston_crimes.columns[i] for i in range(1,6)):
-    clean.check_greater_than_zero(df_boston_crimes[col])
+for col in list(df_chicago_crimes.columns[i] for i in range(1,6)):
+    clean.check_greater_than_zero(df_chicago_crimes[col])
 
 clean.check_greater_than_zero(df_gold["value"])
 
@@ -84,13 +85,13 @@ for col in list(df_bitcoin_tweets.columns[i] for i in range(10, 14)):
     clean.check_bitcoin_price(df_bitcoin_tweets[col])
 
 # Checking the range of latitude and longitude is correct
-clean.check_latitude(df_boston_crimes["avg_latitude"])
-clean.check_longitude(df_boston_crimes["avg_longitude"])
+clean.check_latitude(df_chicago_crimes["avg_latitude"])
+clean.check_longitude(df_chicago_crimes["avg_longitude"])
 
 # Checking for missing values
-clean.check_null(df_gold, "Gold df")
-clean.check_null(df_bitcoin_tweets, "Bitcoin tweets df")
-clean.check_null(df_boston_crimes, "Boston crimes df")
+clean.check_null(df_gold.iloc[1:,:], "Gold df")
+clean.check_null(df_bitcoin_tweets.iloc[1:,:], "Bitcoin tweets df")
+clean.check_null(df_chicago_crimes, "Chicago crimes df")
 
 # Checking all dates are used
 for df in df_list:
@@ -98,5 +99,5 @@ for df in df_list:
 
 # Writing the dataframe to their respective files
 df_gold.to_csv("../../datasets/final/gold_final.csv", index = None)
-df_boston_crimes.to_csv("../../datasets/final/boston_crimes_final.csv", index = None)
+df_chicago_crimes.to_csv("../../datasets/final/boston_crimes_final.csv", index = None)
 df_bitcoin_tweets.to_csv("../../datasets/final/bitcoin_tweets_final.csv", index = None)

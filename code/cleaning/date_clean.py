@@ -4,27 +4,27 @@ import time # For comparing dates
 
 # Reading each dataframe from its original csv file 
 df_gold = pd.read_csv("../../datasets/original/gold.csv", index_col = False)
-df_boston_crimes = pd.read_csv("../../datasets/original/boston_crimes.csv", index_col = False,
+df_chicago_crimes = pd.read_csv("../../datasets/original/chicago_crimes.csv", index_col = False,
         error_bad_lines = False, dtype = "unicode")
 df_bitcoin_tweets = pd.read_csv("../../datasets/original/bitcoin_tweets.csv", sep = ";", index_col = False)
 
-df_boston_crimes = df_boston_crimes.iloc[:-4] # Removing the final 4 lines since they are invalid
+df_chicago_crimes = df_chicago_crimes.iloc[:-4] # Removing the final 4 lines since they are invalid
 
 
     ## Creating a common date format between the datasets
 
 # Extracting the date column from each dataframe
 date_gold = df_gold["Date"]
-date_boston_crimes = df_boston_crimes["Date"]
+date_chicago_crimes = df_chicago_crimes["Date"]
 date_bitcoin_tweets = df_bitcoin_tweets["Date"]
 
 '''
-Changing the date format in the Boston crimes data frame 
+Changing the date format in the Chicago crimes data frame 
 from MM/DD/YYYY HH:MM:SS AM/PM to YYYY-MM-DD 
 which is the ISO 8601 standard 
 '''
 new_dates = [] # Creating an empty list to store the new date format
-for date_string in date_boston_crimes:
+for date_string in date_chicago_crimes:
     splitted = str(date_string).split()
     splitted = splitted[0].split("/")
     
@@ -35,8 +35,8 @@ for date_string in date_boston_crimes:
     
     new_dates.append("-".join(splitted)) # Appending the new date string to the list
 
-date_boston_crimes = pd.Series(new_dates) # Turning the formatted date list into a pandas Series
-df_boston_crimes["Date"] = date_boston_crimes # Changing date column to the new format
+date_chicago_crimes = pd.Series(new_dates) # Turning the formatted date list into a pandas Series
+df_chicago_crimes["Date"] = date_chicago_crimes # Changing date column to the new format
 
 # Removing the time from the dates in the bitcoin tweets data frame
 new_dates = [] # Creating an empty list to store the new date format
@@ -62,7 +62,7 @@ oldest_date = getDate("0001-01-01") # An arbitrary old date
 newest_date = getDate("3000-01-01") # An arbitrary date in the future
 
 # Iterating through the three date series
-for date_series in [date_gold, date_boston_crimes, date_bitcoin_tweets]:
+for date_series in [date_gold, date_chicago_crimes, date_bitcoin_tweets]:
 
     # Initialising with default values by taking the first value Series
     old_date = getDate(date_series[0])
@@ -107,22 +107,22 @@ def setNewDates(df):
 
 # Restricting each dataset to their common date range
 df_gold = setNewDates(df_gold)
-df_boston_crimes= setNewDates(df_boston_crimes)
+df_chicago_crimes= setNewDates(df_chicago_crimes)
 df_bitcoin_tweets = setNewDates(df_bitcoin_tweets)
 
 # Removing the last 8 columns due to redundancy
-df_boston_crimes = df_boston_crimes.drop(df_boston_crimes.iloc[:, 22:30], axis = 1)
+df_chicago_crimes = df_chicago_crimes.drop(df_chicago_crimes.iloc[:, 22:30], axis = 1)
 
 # Function that turns all column names in a df to lowercase
 def column_names_tolower(df):
     df.columns = map(str.lower, df.columns)
 
 # Iterating through each dataset to make lowercase each column name 
-for df in [df_gold, df_boston_crimes, df_bitcoin_tweets]:
+for df in [df_gold, df_chicago_crimes, df_bitcoin_tweets]:
     column_names_tolower(df)
 
 # Renaming column names to snakecase
-df_boston_crimes = df_boston_crimes.rename(columns = {
+df_chicago_crimes = df_chicago_crimes.rename(columns = {
     "case number":"case_number",
     "primary type":"primary_type",
     "location description":"location_description",
@@ -140,9 +140,9 @@ df_bitcoin_tweets = df_bitcoin_tweets.rename(columns = {
 
 # Testing
 print(df_gold)
-print(df_boston_crimes)
+print(df_chicago_crimes)
 print(df_bitcoin_tweets)
 
 df_gold.to_csv("../../datasets/modified/gold_mod.csv", index = None)
-df_boston_crimes.to_csv("../../datasets/modified/boston_crimes_mod.csv", index = None)
+df_chicago_crimes.to_csv("../../datasets/modified/chicago_crimes_mod.csv", index = None)
 df_bitcoin_tweets.to_csv("../../datasets/modified/bitcoin_tweets_mod.csv", index = None)
