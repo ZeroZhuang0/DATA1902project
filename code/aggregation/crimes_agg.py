@@ -16,7 +16,7 @@ df_boston_crimes = df_boston_crimes.astype({"latitude": float,
 
 # Counting the number of crimes for each day and renaming it "total_crimes"
 df_boston_crimes_agg = df_boston_crimes.groupby("date", as_index = False)["id"] \
-                                        .count().rename(columns = {"id":"total_crimes"})
+                                        .count().rename(columns = {"id": "total_crimes"})
 
 # Adding a boolean computer related column for the crimes descriptions which contain "COMPUTER"
 df_boston_crimes["computer_related"] = df_boston_crimes["description"].str.contains("COMPUTER")
