@@ -17,4 +17,5 @@ df_combined = df_combined.rename(columns = {"value": "gold_value"})
 print(df_combined.dtypes)
 print(df_combined)
 
+# Saving the combined dataframe to a csv file
 df_combined.to_csv("../../datasets/final/df_combined.csv", index = None)
