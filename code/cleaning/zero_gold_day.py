@@ -1,17 +1,3 @@
-    ## Import necessary library
-import pandas as pd # For data manipulation 
-from datetime import datetime, date,timedelta
-
-# Reading each dataframe from its respective csv file
-df_gold = pd.read_csv("../../datasets/modified/gold_mod.csv", index_col = False)
-
-# Reversing the order such that the row are in chronological order
-df_gold = df_gold[::-1]
-df_gold = df_gold.reset_index(drop = True) # Re-ordering the indices
-
-
-    ## Ensuring that each day exists and dealing with missing dates
-
 # Defining a function that converts a string to a date object
 def string_to_date(date_string):
     date_splitted = date_string.split("-")
@@ -52,7 +38,3 @@ result.loc[len(result["date"])] = [df_gold["date"][n-1], df_gold["value"][n-1]]
 # Testing
 print(df_gold)
 print(result)
-
-    
-    ## Changing the types of each column to an appropriate type for computation.
-df_gold["value"] = pd.to_numeric(df_gold["value"]) # Value column in gold to numeric
