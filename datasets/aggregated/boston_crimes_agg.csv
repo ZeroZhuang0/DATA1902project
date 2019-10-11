@@ -1,4 +1,4 @@
-date,num_crimes,computer_related,num_arrests,num_domestic
+date,total_crimes,computer_related,num_arrests,num_domestic
 2017-08-01,947,0,135,160
 2017-08-02,773,2,157,130
 2017-08-03,848,0,153,133

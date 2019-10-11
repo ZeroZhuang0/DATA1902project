@@ -11,9 +11,9 @@ df_boston_crimes = df_boston_crimes.replace({"true": True, "false": False})
 
     ## Aggregating each day into one row for the Boston crimes dataframe
 
-# Counting the number of crimes for each day and renaming it "num_crimes"
+# Counting the number of crimes for each day and renaming it "total_crimes"
 df_boston_crimes_agg = df_boston_crimes.groupby("date", as_index = False)["id"] \
-                                        .count().rename(columns = {"id":"num_crimes"})
+                                        .count().rename(columns = {"id":"total_crimes"})
 
 # Adding a boolean computer related column for the crimes descriptions which contain "COMPUTER"
 df_boston_crimes["computer_related"] = df_boston_crimes["description"].str.contains("COMPUTER")
@@ -27,7 +27,7 @@ df_boston_crimes_agg["num_domestic"] = df_boston_crimes.groupby("date", as_index
 
 # Changing the types of each column to their appropriate type
 convert_dict = {"date": str,
-                "num_crimes": int,
+                "total_crimes": int,
                 "computer_related": int,
                 "num_arrests": int,
                 "num_domestic": int}
