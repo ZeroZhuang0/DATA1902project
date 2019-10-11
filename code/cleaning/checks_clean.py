@@ -1,16 +1,17 @@
-def check_type(column, type): #checks whether values in column have correct type
+def check_type(column, t): #checks whether values in column have correct type
     i = 1
     no_error = True
     for value in column:
-        if type(value) != type:
-            print('Expected type: {}'.format(type))
+        if type(value) != t:
+            print('Expected type: {}'.format(t))
+            print('Actual type: {}'.format(type(value)))
             print('Row: {}'.format(i))
             print('Value: {}'.format(value))
             print()
             no_error = False
         i += 1
     if no_error:
-        print('{} column has correct type {}.'.format(column.name, type))
+        print('{} column has correct type {}.'.format(column.name, t))
 
 def check_date(column): #checks whether date has correct format
     no_error = True
@@ -43,21 +44,31 @@ def check_date(column): #checks whether date has correct format
     if no_error:
         print('All dates have correct format.')
 
-def check_tweets(total, positive, negative, neutral): #checks whether total tweets is equal to sum of positive, negative and neutral tweets
-    i = 1
+#checks whether total tweets is equal to sum of positive, negative and neutral tweets
+def check_tweets(total, positive, negative, neutral, bots): 
+    i = 0
     no_errors = True
+    largest_error = 0
+    bad_rows = []
     while i < len(total):
-        if total[i] != positive[i] + negative[i] + neutral[i]:
-            print("Total number of tweets in row {} doesn't add up.".format(i))
-            print()
+        expected_sum = positive[i] + negative[i] + neutral[i] + bots[i]
+        if total[i] != expected_sum:
+            error = abs(expected_sum - total[i])
+            if error > largest_error:
+                largest_error = error
+            print("Total number of tweets for row {} is different by {}".format(i, error))
+            bad_rows.append(i)
             no_errors = False
         i += 1
     if no_errors:
         print('Number of tweets in each row add up')
+    elif largest_error > 3:
+        print("The max error of {} is large. Investigate further.".format(bad_rows))
+    return largest_error, bad_rows
 
 def check_greater_than_zero(column): #check if values are positive
     no_errors = True
-    i = 1
+    i = 0
     for value in column:
         if value < 0:
             print('Row {} in {} column has negative value.'.format(i, column.name))
@@ -67,9 +78,33 @@ def check_greater_than_zero(column): #check if values are positive
     if no_errors:
         print('All values in {} column are positive'.format(column.name))
 
-def less_than_one(column): #check if values are between -1 and 1
+def check_longitude(column): #check if values are positive
+    no_errors = True
+    i = 0
+    for value in column:
+        if value > 180 or value < -180:
+            print('Row {} in {} column has wrong longitude value of {}.'.format(i, column.name, value))
+            print()
+            no_errors = False
+        i += 1
+    if no_errors:
+        print('All longitude values in {} column within correct range'.format(column.name))
+
+def check_latitude(column): #check if values are positive
+    no_errors = True
+    i = 0
+    for value in column:
+        if value > 90 or value < -90:
+            print('Row {} in {} column has wrong latitude value of {}.'.format(i, column.name, value))
+            print()
+            no_errors = False
+        i += 1
+    if no_errors:
+        print('All latitude values in {} column within correct range'.format(column.name))
+
+def abs_less_than_one(column): #check if values are between -1 and 1
     no_errors =  True
-    i = 1
+    i = 0
     for value in column:
         if abs(value) > 1:
             print('Value in row {} in {} column is not between -1 and 1.'.format(i, column.name))
@@ -81,7 +116,7 @@ def less_than_one(column): #check if values are between -1 and 1
 
 def check_gold_price(column): #checks if there is a value which is too large
     no_errors =  True
-    i = 1
+    i = 0
     for value in column:
         if value > 2000:
             print('Gold price {} in row {} is too large.'.format(value, i))
@@ -90,3 +125,22 @@ def check_gold_price(column): #checks if there is a value which is too large
         i += 1
     if no_errors:
         print('All gold prices are in correct range.')
+
+def check_bitcoin_price(column): #checks if there is a value which is too large
+    no_errors =  True
+    i = 0
+    for value in column:
+        if value > 20000: # highest bitcoin price ever recorded around 19800
+            print('Bitcoin price {} in row {} is too large.'.format(value, i))
+            print()
+            no_errors = False
+        i += 1
+    if no_errors:
+        print('All bitcoin prices are in correct range.')
+
+def check_null(df, name):
+    if df.isnull().values.any():
+        null_sum = df.isnull().sum()
+        print("{} has {} missing values".format(name, null_sum))
+    else:
+        print("{} has no missing values".format(name))
