@@ -1,7 +1,7 @@
     ## Importing necessary libraries
 import pandas as pd # For working with the datasets
 
-# Reading each dataframe from modified csv files 
+# Reading each dataframe from modified csv files
 df_gold = pd.read_csv("../../datasets/final/gold_final.csv", index_col = False)
 df_boston_crimes = pd.read_csv("../../datasets/final/boston_crimes_final.csv", index_col = False)
 df_bitcoin_tweets = pd.read_csv("../../datasets/final/bitcoin_tweets_final.csv", index_col = False)

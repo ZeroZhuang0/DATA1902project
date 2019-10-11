@@ -1,5 +1,5 @@
     ## Import necessary library
-import pandas as pd # For data manipulation 
+import pandas as pd # For data manipulation
 
 # Reading the bitcoin dataset from its respective csv file
 df_bitcoin_tweets = pd.read_csv("../../datasets/modified/bitcoin_tweets_mod.csv", index_col = False)
@@ -37,7 +37,7 @@ for i in [3, 4, 5, 8, 9, 14, 15]:
 for i in [6, 7]:
     col = df_bitcoin_tweets.columns[i] # Retrieving the column to aggregate on
     # Inserting the aggregated column to the aggregated bitcoin dataframe
-    df_bitcoin_tweets_agg.insert(i, col, 
+    df_bitcoin_tweets_agg.insert(i, col,
             df_bitcoin_tweets.groupby("date", as_index = False)[col].mean().iloc[:,1])
 
 # Creating a column for the opening price
@@ -70,6 +70,10 @@ convert_dict = {"date": str,
                 "volume_btc": float,
                 "volume_currency": float}
 df_bitcoin_tweets_agg = df_bitcoin_tweets_agg.astype(convert_dict)
+
+# Creating a new column the percentage change in gold value for each day
+df_bitcoin_tweets_agg['bitcoin_change'] = df_bitcoin_tweets_agg['close'].pct_change()*100
+
 
 # Testing
 print(df_bitcoin_tweets_agg.dtypes)
