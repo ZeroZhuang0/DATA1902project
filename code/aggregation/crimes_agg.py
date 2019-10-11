@@ -8,6 +8,9 @@ df_boston_crimes = pd.read_csv("../../datasets/modified/boston_crimes_mod.csv", 
 # Changing the type of all boolean columns from string to boolean
 df_boston_crimes = df_boston_crimes.replace({"true": True, "false": False})
 
+# Changing two columns to float for computation
+df_boston_crimes = df_boston_crimes.astype({"latitude": float,
+                                            "longitude": float})
 
     ## Aggregating each day into one row for the Boston crimes dataframe
 
@@ -19,18 +22,38 @@ df_boston_crimes_agg = df_boston_crimes.groupby("date", as_index = False)["id"] 
 df_boston_crimes["computer_related"] = df_boston_crimes["description"].str.contains("COMPUTER")
 
 # Adding a computer related column for the number of computer related crimes on each day
-df_boston_crimes_agg["computer_related"] = df_boston_crimes.groupby("date", as_index = False)["computer_related"].sum().iloc[:,1]
+df_boston_crimes_agg["computer_related"] = df_boston_crimes.groupby("date", as_index = False) \
+                                                ["computer_related"].sum().iloc[:,1]
+
+# Adding a boolean financial related crime column for the crimes descriptions which contain "FINANCIAL"
+df_boston_crimes["financial_crimes"] = df_boston_crimes["description"].str.contains("FINANCIAL")
+
+# Adding a computer related column for the number of computer related crimes on each day
+df_boston_crimes_agg["financial_crimes"] = df_boston_crimes.groupby("date", as_index = False) \
+                                                ["financial_crimes"].sum().iloc[:,1]
 
 # Adding a column for the number of arrests and domestic crimes per day
-df_boston_crimes_agg["num_arrests"] = df_boston_crimes.groupby("date", as_index = False)["arrest"].sum().iloc[:,1]
-df_boston_crimes_agg["num_domestic"] = df_boston_crimes.groupby("date", as_index = False)["domestic"].sum().iloc[:,1]
+df_boston_crimes_agg["num_arrests"] = df_boston_crimes.groupby("date", as_index = False) \
+                                                ["arrest"].sum().iloc[:,1]
+df_boston_crimes_agg["num_domestic"] = df_boston_crimes.groupby("date", as_index = False) \
+                                                ["domestic"].sum().iloc[:,1]
+
+# Finding the average location of crime for each day
+df_boston_crimes_agg["avg_latitude"] = df_boston_crimes.groupby("date", as_index = False) \
+                                                ["latitude"].mean().iloc[:,1]
+df_boston_crimes_agg["avg_longitude"] = df_boston_crimes.groupby("date", as_index = False) \
+                                                ["longitude"].mean().iloc[:,1]
+
 
 # Changing the types of each column to their appropriate type
 convert_dict = {"date": str,
                 "total_crimes": int,
                 "computer_related": int,
+                "financial_crimes": int,
                 "num_arrests": int,
-                "num_domestic": int}
+                "num_domestic": int,
+                "avg_latitude": float,
+                "avg_longitude": float}
 df_boston_crimes_agg = df_boston_crimes_agg.astype(convert_dict)
 
 # Testing
