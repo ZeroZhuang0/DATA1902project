@@ -38,15 +38,18 @@ I added about 30 expressions  and words to the dictionary. To score the expressi
  
 
 ### Chicago Crime
-from chicago "This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified."
+from chicago "This dataset reflects reported incidents of crime  that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified."
 
 all location shifted for partial redaction but block remains same
 
-from a constantly updated downloaded 22 col 2099624 (incl header), each row is data for a single crime has its own ID and case number 
+from a constantly updated downloaded 22 col 2099624 (incl header),each reported incident of crime  each row is data for a single crime has its own ID and case number 
 date and time of the crime which stes smtimes just an estimate , different formats for location thats with more sepcific forms its partially redacted so that the block remainds the same ,and duscriotion of fcrime through different several forms of classification for the type of crime. whether or not dometisc or if an arrest was made and the date when the data fro that row was last updated
 
 22 col 2099624 (incl header)  2017-08-01
 Information about location (slightly off or generalised as a form of redaction) as longtidude and latitude as well as x coordinates and
+9/28/2019   10/05/2019
+04/04/2012       2/10/2016 02/04/2016
+
 
 ID: unique identifier,  
 Case Number: Chicago Police Department Records Division  Number also unique 
@@ -72,6 +75,7 @@ Longitude,
 Location: combines long ang lat,
 
  
+used and manipulated provded that the following disclaimer is included whenebver
 
 liability/disclaimer: The City of Chicago (“City”) voluntarily provides the data on this website as a service to the public. 
 Any user of this website providing any software application, or other secondary or derivative application using data supplied at this website shall do the following:
@@ -80,7 +84,8 @@ Include the following disclaimer at the site where the software application, or 
 Comply with any additional Terms of Use set forth by the City agency or department providing data used by the software application, or other secondary or derivative application, including, without limitation, requirements to include additional citations or disclaimers at the site where the application can be accessed or downloaded. 
 
 strenghts weakness: a lot of detail in columns,
-"These crimes may be based upon preliminary information supplied to the Police Department by the reporting parties that have not been verified. The preliminary crime classifications may be changed at a later date based upon additional investigation and there is always the possibility of mechanical or human error. Therefore, the Chicago Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. The Chicago Police Department will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information"
+"These crimes may be based upon preliminary information supplied to the Police Department by the reporting parties that have not been verified. The preliminary crime classifications may be changed at a later date based upon additional investigation and there is always the possibility of mechanical or human error. Therefore, the Chicago Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. The Chicago Police Department will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information" 
+ (with the exception of murders where data exists for each victim) excpet in case of murders where there r multiple victims, then data is for each victim
 
 ### Gold Prices
 https://www.quandl.com/data/WGC-Gold-Prices?page=3
