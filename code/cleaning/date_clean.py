@@ -3,10 +3,10 @@ import pandas as pd # For data manipulation
 import time # For comparing dates
 
 # Reading each dataframe from its original csv file 
-df_gold = pd.read_csv("../../datasets/gold.csv", index_col = False)
-df_boston_crimes = pd.read_csv("../../datasets/boston_crimes.csv", index_col = False,
+df_gold = pd.read_csv("../../datasets/original/gold.csv", index_col = False)
+df_boston_crimes = pd.read_csv("../../datasets/original/boston_crimes.csv", index_col = False,
         error_bad_lines = False, dtype = "unicode")
-df_bitcoin_tweets = pd.read_csv("../../datasets/bitcoin_tweets.csv", sep = ";", index_col = False)
+df_bitcoin_tweets = pd.read_csv("../../datasets/original/bitcoin_tweets.csv", sep = ";", index_col = False)
 
 df_boston_crimes = df_boston_crimes.iloc[:-4] # Removing the final 4 lines since they are invalid
 
