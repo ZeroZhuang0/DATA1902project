@@ -3,10 +3,10 @@ import pandas as pd # For data manipulation
 import time # For comparing dates
 
 # Reading each dataframe from its original csv file 
-df_gold = pd.read_csv('datasets/gold.csv', index_col = False)
-df_boston_crimes = pd.read_csv('datasets/boston_crimes.csv', index_col = False,
+df_gold = pd.read_csv("../../datasets/gold.csv", index_col = False)
+df_boston_crimes = pd.read_csv("../../datasets/boston_crimes.csv", index_col = False,
         error_bad_lines = False, dtype = "unicode")
-df_bitcoin_tweets = pd.read_csv('datasets/bitcoin_tweets.csv', sep = ";", index_col = False)
+df_bitcoin_tweets = pd.read_csv("../../datasets/bitcoin_tweets.csv", sep = ";", index_col = False)
 
 df_boston_crimes = df_boston_crimes.iloc[:-4] # Removing the final 4 lines since they are invalid
 
@@ -102,8 +102,9 @@ def setNewDates(df):
     return df
 
 # Restricting each dataset to their common date range
-for df in [df_gold, df_boston_crimes, df_bitcoin_tweets]:
-    df = setNewDates(df)
+df_gold = setNewDates(df_gold)
+df_boston_crimes= setNewDates(df_boston_crimes)
+df_bitcoin_tweets = setNewDates(df_bitcoin_tweets)
 
 # Removing the last 8 columns due to redundancy
 df_boston_crimes = df_boston_crimes.drop(df_boston_crimes.iloc[:, 22:30], axis = 1)
@@ -133,10 +134,10 @@ df_bitcoin_tweets = df_bitcoin_tweets.rename(columns = {
     "volume (currency)":"volume_currency"})
 
 # Testing
-print(df_gold.head())
-print(df_boston_crimes.head())
-print(df_bitcoin_tweets.head())
+print(df_gold)
+print(df_boston_crimes)
+print(df_bitcoin_tweets)
 
-df_gold.to_csv("datasets/modified/gold_mod.csv", index = None)
-df_boston_crimes.to_csv("datasets/modified/boston_crimes_mod.csv", index = None)
-df_bitcoin_tweets.to_csv("datasets/modified/bitcoin_tweets_mod.csv", index = None)
+df_gold.to_csv("../../datasets/modified/gold_mod.csv", index = None)
+df_boston_crimes.to_csv("../../datasets/modified/boston_crimes_mod.csv", index = None)
+df_bitcoin_tweets.to_csv("../../datasets/modified/bitcoin_tweets_mod.csv", index = None)

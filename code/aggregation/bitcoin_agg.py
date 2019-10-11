@@ -2,7 +2,7 @@
 import pandas as pd # For data manipulation 
 
 # Reading the bitcoin dataset from its respective csv file
-df_bitcoin_tweets = pd.read_csv('datasets/modified/bitcoin_tweets_mod.csv', index_col = False)
+df_bitcoin_tweets = pd.read_csv("../../datasets/modified/bitcoin_tweets_mod.csv", index_col = False)
 
 '''
 Changing the types of each column to an appropriate type for computation.
@@ -52,7 +52,7 @@ df_bitcoin_tweets_agg.insert(12, "low", df_bitcoin_tweets.groupby("date", as_ind
 # Creating a column for the closing price
 df_bitcoin_tweets_agg.insert(13, "close", df_bitcoin_tweets.groupby("date", as_index = False)["close"].last().iloc[:,1])
 
-    ## Changing the types of each column to their appropriate type
+# Changing the types of each column to their appropriate type
 convert_dict = {"date": str,
                 "compound_score_weighted": float,
                 "total_volume_of_tweets": int,
@@ -76,4 +76,4 @@ print(df_bitcoin_tweets_agg.dtypes)
 print(df_bitcoin_tweets_agg)
 
 # Writing the aggregated dataset to a readable csv file
-df_bitcoin_tweets_agg.to_csv("datasets/aggregated/bitcoin_tweets_agg.csv", index = None)
+df_bitcoin_tweets_agg.to_csv("../../datasets/aggregated/bitcoin_tweets_agg.csv", index = None)
