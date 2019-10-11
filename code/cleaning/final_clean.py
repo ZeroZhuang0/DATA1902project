@@ -92,6 +92,10 @@ clean.check_null(df_gold, "Gold df")
 clean.check_null(df_bitcoin_tweets, "Bitcoin tweets df")
 clean.check_null(df_boston_crimes, "Boston crimes df")
 
+# Checking all dates are used
+for df in df_list:
+    clean.check_no_missing_days(df["date"])
+
 # Writing the dataframe to their respective files
 df_gold.to_csv("../../datasets/final/gold_final.csv", index = None)
 df_boston_crimes.to_csv("../../datasets/final/boston_crimes_final.csv", index = None)

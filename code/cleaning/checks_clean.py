@@ -1,3 +1,5 @@
+from datetime import datetime, date, timedelta # For comparing dates
+
 def check_type(column, t): #checks whether values in column have correct type
     i = 1
     no_error = True
@@ -144,3 +146,31 @@ def check_null(df, name):
         print("{} has {} missing values".format(name, null_sum))
     else:
         print("{} has no missing values".format(name))
+
+'''
+Creating a function that returns a time object given a string of the date in the format
+"YYYY-MM-DD"
+'''
+def string_to_date(date_string):
+    date_splitted = date_string.split("-")
+    year, month, day = date_splitted
+    return date(year = int(year) , month = int(month), day = int(day))
+
+one_day = timedelta(days = 1) # Finding the time between days 
+
+def check_no_missing_days(date_series):
+    no_missing_days = True
+    first_day = True
+    for date in date_series:
+        date = string_to_date(date)
+        if first_day:
+            prev_day = date
+            first_day = False
+            continue
+        if (date - prev_day).days != 1:
+            print("There is/are missing days between {} and {}".format(prev_day, date))
+            no_missing_days = False
+        prev_day = date
+    if no_missing_days:
+        print("Success: The df has no missing days")
+
