@@ -10,6 +10,7 @@ df_bitcoin_tweets = pd.read_csv("../../datasets/bitcoin_tweets.csv", sep = ";", 
 
 df_boston_crimes = df_boston_crimes.iloc[:-4] # Removing the final 4 lines since they are invalid
 
+
     ## Creating a common date format between the datasets
 
 # Extracting the date column from each dataframe
@@ -45,6 +46,9 @@ for date_string in date_bitcoin_tweets:
 
 date_bitcoin_tweets = pd.Series(new_dates) # Turning the formatted date list into a pandas Series
 df_bitcoin_tweets["Date"] = date_bitcoin_tweets # Changing date column to the new format
+
+    
+    ## Creating a common date range between all datasets
 
 '''
 Creating a function that returns a time object given a string of the date in the format
@@ -132,6 +136,7 @@ df_bitcoin_tweets = df_bitcoin_tweets.rename(columns = {
     "total volume of tweets":"total_volume_of_tweets",
     "volume (btc)":"volume_btc",
     "volume (currency)":"volume_currency"})
+
 
 # Testing
 print(df_gold)

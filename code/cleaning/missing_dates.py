@@ -5,7 +5,12 @@ from datetime import datetime, date,timedelta
 # Reading each dataframe from its respective csv file
 df_gold = pd.read_csv("../../datasets/modified/gold_mod.csv", index_col = False)
 
-df_gold = df_gold[::-1] # Reversing the order such that the row are in chronological order
+# Reversing the order such that the row are in chronological order
+df_gold = df_gold[::-1]
+df_gold = df_gold.reset_index(drop = True) # Re-ordering the indices
+
+
+    ## Ensuring that each day exists and dealing with missing dates
 
 # Defining a function that converts a string to a date object
 def string_to_date(date_string):
@@ -26,7 +31,7 @@ while i < len(df_gold["date"]):
         pre = df_gold["date"][i]
         value = df_gold["value"][i]
         result.loc[len(result["date"])] = [pre, value]
-        pre = string_to_date(df_gold["date"][i])
+        pre = string_to_date(pre)
     
     else:
         current_date = string_to_date(df_gold["date"][i])
