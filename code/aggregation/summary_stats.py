@@ -21,9 +21,12 @@ for col in list(df_combined.columns[i] for i in range(1,len(df_combined.columns)
     df_stats[col]["median"] = df_combined[col].median()
     df_stats[col]["iqr"] = df_combined[col].quantile(0.75) - df_combined[col].quantile(0.25)
 
+# Naming the index column
+df_stats.index.name = "statistics"
+
 # Testing
 print(df_stats)
 
 
 # Writing it to a csv file
-df_stats.to_csv("../../datasets/final/combined_stats.csv", index = None)
+df_stats.to_csv("../../datasets/final/combined_stats.csv")
