@@ -45,8 +45,9 @@ sizeref = 2.0 * max(df.financial_crimes) / (25.0 ** 2) # Setting the reference s
 
 # Creating the trace for Bitcoin closing price over time
 price_date = go.Scatter(x = df.date, y = df.close,
-        hovertext = ["Date: {}<br>Price: {:.1f}<br>Financial Crimes: {}<br>Tweets: {}"
+        hovertext = ["Date: {}<br>Price: {}{:.1f}<br>Financial Crimes: {}<br>Tweets: {}"
                     .format(parser.parse(line["date"]).strftime("%-d %b, %Y"), 
+                        u"\u0243",
                         line["close"],
                         line["financial_crimes"],
                         line["total_volume_of_tweets"])\
@@ -121,15 +122,12 @@ layout = go.Layout(
             x = 0.5
             ),
         shapes = [
-	    # filled Rectangle
-	    go.layout.Shape(
+	    go.layout.Shape( # White-filled rectangle for aesthetic purposes
 		type="rect",
                 xref = "paper",
                 yref = "paper",
-		#x0 = 0.87,
                 x0 = 0,
 		y0 = 0,
-		#x1 = 1,
                 x1 = 0.13,
 		y1 = 1,
 		line = dict(
@@ -151,6 +149,15 @@ Coloured by Total Number of Crimes
 '''
 
 fig = go.Scatter3d(x = df["date"], y = df["close"], z = df["total_volume_of_tweets"],
+        hovertext = ["Date: {}<br>Price: {}{:.1f}<br>Tweets: {}<br>Crimes: {}"
+                    .format(parser.parse(line["date"]).strftime("%-d %b, %Y"), 
+                        u"\u0243",
+                        line["close"],
+                        line["total_volume_of_tweets"],
+                        line["total_crimes"])\
+                    
+                    for index, line in df.iterrows()],
+        hoverinfo = "text",
         mode = "markers",
         marker = dict(
             color = df["total_crimes"],
@@ -170,8 +177,14 @@ layout = go.Layout(
             ),
         scene = dict(
             xaxis = dict(title = "Date"),
-            yaxis = dict(title = "Bitcoin Closing Price ({})".format(u"\u0243")),
-            zaxis = dict(title = "Number of Tweets Mentioning Bitcoin")
+            yaxis = dict(
+                title = "Bitcoin Closing Price ({})".format(u"\u0243"),
+                range = [0, 20000]
+                ),
+            zaxis = dict(
+                title = "Number of Tweets Mentioning Bitcoin",
+                range = [0, 140000]
+                )
             )
         )
 
@@ -183,5 +196,45 @@ print("Pearson's Correlation between Bitcoin close price and Volume of tweets: {
         .format(pearsonr(df["close"], df["total_volume_of_tweets"])[0]))
 
 
+'''
+Daily Bitcoin Percentage Change VS Number of Domestic Crimes
+Coloured by Total Number of Positive Tweets
+'''
 
+fig = go.Scatter(x = df["bitcoin_close_change"], y = df["num_domestic"],
+        hovertext = ["Change in Price: {:.1f}%<br>Domestic Crimes: {}<br>Positive Tweets: {}"
+                .format(line["bitcoin_close_change"],
+                        line["num_domestic"],
+                        line["count_positives"])\
+                    
+                    for index, line in df.iterrows()],
+        hoverinfo = "text",
+        mode = "markers",
+        marker = dict(
+            color = df["count_positives"],
+            colorscale = "algae",
+            colorbar = dict(
+                title = dict(
+                    text = "Number of Positive Tweets<br>Mentioning Bitcoin"
+                    )
+                ),
+            size = 10,
+            opacity = 0.8
+            )
+        )
 
+layout = go.Layout(
+        title = dict(
+            text = "Daily Percentage Change in Bitcoin VS the Number of Domestic Crimes Committed in Chicago",
+            x = 0.4
+            ),
+        xaxis = dict(title = "Percentage Change in Bitcoin Closing Price (%)"),
+        yaxis = dict(
+            title = "Number of Domestic Crimes in Chicago",
+            range = [0, max(df["num_domestic"]) + 20]
+            ),
+        )
+
+fig = go.Figure(data = [fig], layout = layout)
+
+pio.write_html(fig, "../../diagrams/bitcoin_close_change_vs_crimes.html")
