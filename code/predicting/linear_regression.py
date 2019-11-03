@@ -1,7 +1,9 @@
 import pandas as pd
 from math import sqrt
-from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
 from sklearn import metrics
+from sklearn import neighbors
+from sklearn.preprocessing import PolynomialFeatures
 from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -9,18 +11,19 @@ raw_data = pd.read_csv("../../datasets/final/df_combined.csv",sep=",")
 data = raw_data.drop(raw_data.index[0])
 
 data["bitcoin_close_change"] = data[["bitcoin_close_change"]].astype(float)
-data["gold_change"] = data["gold_change"].astype(float)
 data["total_volume_of_tweets"] = data["total_volume_of_tweets"].astype(float)
-data["count_negatives"] = data["count_negatives"].astype(float)
-data["count_positives"] = data["count_positives"].astype(float)
+data["sent_negatives"] = data["sent_negatives"].astype(float)
+data["sent_positives"] = data["sent_positives"].astype(float)
 data["total_crimes"] = data["total_crimes"].astype(float)
 data["financial_crimes"] = data["financial_crimes"].astype(float)
+data["count_news"] = data["count_news"].astype(float)
 
-X = data[["gold_change", "total_crimes", "total_volume_of_tweets", "count_negatives", "count_positives", "financial_crimes"]]
+X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_positives", "financial_crimes"]]
 y = data[["bitcoin_close_change"]]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
-regr = linear_model.LinearRegression().fit(X_train, y_train)
+
+regr = LinearRegression().fit(X_train, y_train)
 
 # The coefficients
 print('Coefficients:')
@@ -32,5 +35,15 @@ mse = metrics.mean_squared_error(y_test, y_pred)
 print('Root mean squared error (RMSE):', sqrt(mse))
 # R-squared score: 1 is perfect prediction
 print('R-squared score:', metrics.r2_score(y_test, y_pred))
-std = np.std(y_test)
-print(y_test)
+
+print()
+
+
+neigh = neighbors.KNeighborsRegressor(n_neighbors=4).fit(X_train, y_train)
+# Use the model to predict X_test
+y_pred = neigh.predict(X_test)
+# Root mean squared error
+mse = metrics.mean_squared_error(y_test, y_pred)
+print('Root mean squared error (RMSE):', sqrt(mse))
+# R-squared score: 1 is perfect prediction
+print('R-squared score:', metrics.r2_score(y_test, y_pred))
