@@ -1,3 +1,4 @@
+# Importing necessary libraries
 import pandas as pd
 from math import sqrt
 from sklearn.linear_model import LinearRegression
@@ -10,13 +11,13 @@ import numpy as np
 raw_data = pd.read_csv("../../datasets/final/df_combined.csv",sep=",")
 data = raw_data.drop(raw_data.index[0])
 
-data["bitcoin_close_change"] = data[["bitcoin_close_change"]].astype(float)
+#converting
+data["total_crimes"] = data["total_crimes"].astype(float)
 data["total_volume_of_tweets"] = data["total_volume_of_tweets"].astype(float)
 data["sent_negatives"] = data["sent_negatives"].astype(float)
 data["sent_positives"] = data["sent_positives"].astype(float)
-data["total_crimes"] = data["total_crimes"].astype(float)
 data["financial_crimes"] = data["financial_crimes"].astype(float)
-data["count_news"] = data["count_news"].astype(float)
+data["bitcoin_close_change"] = data[["bitcoin_close_change"]].astype(float)
 
 X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_positives", "financial_crimes"]]
 y = data[["bitcoin_close_change"]]
@@ -36,9 +37,9 @@ print('Root mean squared error (RMSE):', sqrt(mse))
 # R-squared score: 1 is perfect prediction
 print('R-squared score:', metrics.r2_score(y_test, y_pred))
 
-print()
+#print()
 
-
+#i think everything belowis irrelevant hayden has yet to confirm
 neigh = neighbors.KNeighborsRegressor(n_neighbors=4).fit(X_train, y_train)
 # Use the model to predict X_test
 y_pred = neigh.predict(X_test)
