@@ -24,6 +24,8 @@ X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_posi
 y = data[["bitcoin_close_change"]]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
+#test_size=0.1 (90% training 10% testing) and random_state=42 (seed set to 42) 
+#used for both predictive models so a valid comparison could be made
 
 regr = LinearRegression().fit(X_train, y_train)
 
