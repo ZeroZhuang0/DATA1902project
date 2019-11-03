@@ -17,9 +17,10 @@ data["total_volume_of_tweets"] = data["total_volume_of_tweets"].astype(float)
 data["sent_negatives"] = data["sent_negatives"].astype(float)
 data["sent_positives"] = data["sent_positives"].astype(float)
 data["financial_crimes"] = data["financial_crimes"].astype(float)
+data["gold_change"] = data["gold_change"].astype(float)
 data["bitcoin_close_change"] = data[["bitcoin_close_change"]].astype(float)
 
-X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_positives", "financial_crimes"]]
+X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_positives", "financial_crimes","gold_change"]
 y = data[["bitcoin_close_change"]]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
@@ -38,7 +39,7 @@ print('Root mean squared error (RMSE):', sqrt(mse))
 print('R-squared score:', metrics.r2_score(y_test, y_pred))
 
 #print()
-
+#note i (shilan) made cchanges most significantly adding in gold change
 #i think everything belowis irrelevant hayden has yet to confirm
 neigh = neighbors.KNeighborsRegressor(n_neighbors=4).fit(X_train, y_train)
 # Use the model to predict X_test
