@@ -3,13 +3,16 @@ import pandas as pd
 from math import sqrt
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
+from sklearn import neighbors
+from sklearn.preprocessing import PolynomialFeatures
 from sklearn.model_selection import train_test_split
 import numpy as np
 
+# Importing the dataset
 raw_data = pd.read_csv("../../datasets/final/df_combined.csv",sep=",")
-data = raw_data.drop(raw_data.index[0])
+data = raw_data.drop(raw_data.index[0]) # Removing the first row since bitcoin_close_change is NaN at first
 
-#converting to floating point integers
+# Converting
 data["total_crimes"] = data["total_crimes"].astype(float)
 data["total_volume_of_tweets"] = data["total_volume_of_tweets"].astype(float)
 data["sent_negatives"] = data["sent_negatives"].astype(float)
@@ -18,14 +21,16 @@ data["financial_crimes"] = data["financial_crimes"].astype(float)
 data["gold_change"] = data["gold_change"].astype(float)
 data["bitcoin_close_change"] = data[["bitcoin_close_change"]].astype(float)
 
-X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_positives", \
-"financial_crimes","gold_change"]]
+X = data[["total_crimes", "total_volume_of_tweets", "sent_negatives", "sent_positives", "financial_crimes","gold_change"]]
 y = data[["bitcoin_close_change"]]
 
-#test_size=0.1 (90% training, 10% testing) and random_state=42 (seed set to 42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 42)
+# test_size = 0.1 (90% training, 10% testing) and random_state = 42 (seed set to 42) 
+# test_size and random_state is consistent for both predictive models so a valid comparison between the two could be made
+
 regr = LinearRegression().fit(X_train, y_train)
 
+# The coefficients
 print('Coefficients:')
 print(regr.coef_)
 # Use the model to predict y from X_test
