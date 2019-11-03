@@ -18,7 +18,7 @@ from keras.utils import np_utils
 random.seed(10)
 pd.options.display.max_rows = 10
 pd.options.display.float_format = '{:.1f}'.format
-raw_data = pd.read_csv("https://raw.githubusercontent.com/ZeroZhuang0/DATA1902project/master/submitted/df_combined.csv",sep=",")
+raw_data = pd.read_csv("../../datasets/final/df_combined.csv",sep=",")
 data = raw_data.drop(raw_data.index[0])
 data = data.reindex()
 #denpendent
@@ -52,5 +52,4 @@ model.add(Dense(20))
 model.add(Activation("softmax"))
 model.compile(loss="categorical_crossentropy",metrics=["accuracy"],optimizer="adam")
 model.summary()
-model.fit(x_train,y_train,batch_size=536, epochs=16, validation_data=(x_test, y_test)) 
-regr = linear_model.LinearRegression().fit(x_train,y_train)
+model.fit(x_train,y_train,batch_size=536, epochs=16, validation_data=(x_test, y_test))
